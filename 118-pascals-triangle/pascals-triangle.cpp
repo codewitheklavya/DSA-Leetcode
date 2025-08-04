@@ -1,19 +1,22 @@
 class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
-        vector<vector<int>> triangle;
-
-        for (int i = 0; i < numRows; i++) {
-            vector<int> row(i + 1, 1); // create a row filled with 1s
-
-            // Fill the middle values (not first or last)
-            for (int j = 1; j < i; j++) {
-                row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
-            }
-
-            triangle.push_back(row); // Add this row to the triangle
+        vector<vector<int>> v;
+        for(int i=1;i<=numRows;i++){
+            vector<int> a(i);
+            v.push_back(a);
         }
 
-        return triangle;
+        for(int i=0;i<numRows;i++){
+            for(int j=0;j<=i;j++){
+                if(i==j || j==0){
+                    v[i][j] = 1;
+                }
+                else{
+                    v[i][j] = v[i-1][j] + v[i-1][j-1];
+                }
+            }
+        }
+        return v;
     }
 };
