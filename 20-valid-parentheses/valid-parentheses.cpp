@@ -6,7 +6,7 @@ public:
             if(c == '(' || c == '{' || c == '[') {
                 st.push(c);
             } else {
-                if(st.empty()) return false; // no matching opening
+                if(st.empty()) return false; 
                 char top = st.top();
                 st.pop();
                 if((c == ')' && top != '(') ||
