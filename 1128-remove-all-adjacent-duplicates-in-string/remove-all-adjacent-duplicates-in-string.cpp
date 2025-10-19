@@ -4,7 +4,7 @@ public:
         string result = "";
         for (char c : s) {
             if (!result.empty() && result.back() == c)
-                result.pop_back(); // remove duplicate
+                result.pop_back(); // for remove duplicate
             else
                 result.push_back(c);
         }
