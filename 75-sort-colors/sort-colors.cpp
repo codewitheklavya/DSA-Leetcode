@@ -6,17 +6,18 @@ public:
         int high = nums.size()-1;
         while(mid<=high){
             if(nums[mid]==2){
-                swap(nums[mid],nums[high]);
+                swap(nums[high],nums[mid]);
                 high--;
             }
-            else if(nums[mid]==0){
+            else if(nums[mid] == 0){
                 swap(nums[low],nums[mid]);
-                mid++;
                 low++;
+                mid++;
             }
             else{
                 mid++;
             }
         }
+        return;
     }
 };
