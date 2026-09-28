@@ -3,17 +3,12 @@ public:
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
         
-        if(k!=0){
-            int rem = k%n;
+        int rem = k%n;
 
-            reverse(nums.begin(),nums.end());
+        reverse(nums.begin(),nums.end());
         reverse(nums.begin()+rem,nums.end());
         reverse(nums.begin(),nums.begin()+rem);
-        }
         
-
-        
-
         return;
     }
 };
