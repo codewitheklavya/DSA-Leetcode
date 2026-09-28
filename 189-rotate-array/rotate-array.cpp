@@ -2,15 +2,18 @@ class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
-        k = k % n;
         
-        // Reverse entire array
-        reverse(nums.begin(), nums.end());
+        if(k!=0){
+            int rem = k%n;
+
+            reverse(nums.begin(),nums.end());
+        reverse(nums.begin()+rem,nums.end());
+        reverse(nums.begin(),nums.begin()+rem);
+        }
         
-        // Reverse first k elements
-        reverse(nums.begin(), nums.begin() + k);
+
         
-        // Reverse remaining elements
-        reverse(nums.begin() + k, nums.end());
+
+        return;
     }
 };
